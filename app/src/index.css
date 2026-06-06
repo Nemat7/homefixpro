@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 33% 97%;
+    --foreground: 0 0% 18%;
+    --card: 30 25% 95%;
+    --card-foreground: 0 0% 18%;
+    --popover: 30 33% 97%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 17 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 30 15% 90%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 30 25% 95%;
+    --accent-foreground: 0 0% 18%;
+    --destructive: 355 78% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 17 100% 60%;
+    --radius: 0.625rem;
+    --lava-orange: #FF6B35;
+    --ember-red: #E63946;
+    --charcoal: #2D2D2D;
+    --ash-gray: #6B6B6B;
+    --parchment: #FAF6F0;
+    --cream: #F5F0E8;
+    --warm-white: #FFFBF5;
+    --molten-gold: #F4A261;
+    --sidebar-background: 30 33% 97%;
+    --sidebar-foreground: 0 0% 18%;
+    --sidebar-primary: 17 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 25% 95%;
+    --sidebar-accent-foreground: 0 0% 18%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 17 100% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-parchment text-charcoal;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-lava-orange text-white font-body font-semibold text-sm uppercase tracking-wider rounded-lg transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-ember-red;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-charcoal text-charcoal font-body font-semibold text-sm uppercase tracking-wider rounded-lg transition-all duration-300;
+  }
+  .btn-secondary:hover {
+    @apply bg-charcoal text-white;
+    transform: translateY(-2px);
+  }
+
+  .section-label {
+    @apply text-xs font-body font-medium uppercase tracking-[0.08em] text-lava-orange;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@layer utilities {
+  .text-shadow-hero {
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(255, 107, 53, 0.15);
+  }
+  .text-shadow-sub {
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-fallback {
+    background: linear-gradient(135deg, #2D2D2D 0%, #1a0a00 30%, #FF6B35 60%, #E63946 100%);
+    background-size: 400% 400%;
+    animation: lavaFlow 15s ease infinite;
+  }
+
+  @keyframes lavaFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes bounce-gentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 1.5s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
