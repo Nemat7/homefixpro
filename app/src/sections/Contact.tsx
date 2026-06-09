@@ -68,14 +68,14 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:info@homefixprosllc.com"
+                href="mailto:Fara3320303@gmail.com"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-lava-orange/20 flex items-center justify-center">
                   <Mail size={18} className="text-lava-orange" />
                 </div>
                 <span className="font-body text-white group-hover:text-lava-orange transition-colors">
-                  info@homefixprosllc.com
+                  Fara3320303@gmail.com
                 </span>
               </a>
 

@@ -86,6 +86,26 @@ export default function Projects() {
           </p>
         </div>
 
+        {/* Widescreen video showcase */}
+        <div className="relative w-full rounded-2xl overflow-hidden mb-10 group" style={{ aspectRatio: '16/9' }}>
+          <video
+            src="/videos/project-showcase.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
+            <p className="font-body text-[10px] sm:text-xs uppercase tracking-widest text-lava-orange mb-1">Behind the work</p>
+            <h3 className="font-display font-bold text-white uppercase text-lg sm:text-2xl leading-tight">
+              See Us In Action
+            </h3>
+          </div>
+          <div className="absolute inset-0 rounded-2xl border-[3px] border-transparent group-hover:border-lava-orange transition-all duration-300 pointer-events-none" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Column 1 */}
           <div ref={col1Ref} className="flex flex-col gap-6">
